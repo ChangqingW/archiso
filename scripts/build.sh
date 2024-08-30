@@ -18,10 +18,7 @@ cleanup () {
 
 # Fetch and patch files
 setup () {
-    git clone https://github.com/x0rzavi/archiso-zfs.git --branch base --depth=1 archiso-base
-    cd "$parent"/archiso-base
-    printf '\n%s\n' 'Applying Patches!'
-    git apply "$parent"/patches/* && printf '\n%s\n' 'Patches Applied!'
+    git clone git@github.com:ChangqingW/archiso.git --branch custom --depth=1 archiso-base
 }
 
 # Setup local repo
@@ -41,7 +38,6 @@ if [ "$(id -u)" -eq 0 ] # require root
 then 
         cleanup
         setup
-        repo
         build
 else printf '%s\n' 'Root priveleges are required!'
 fi
