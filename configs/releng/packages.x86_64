@@ -128,3 +128,5 @@ wvdial
 xfsprogs
 xl2tpd
 zsh
+linux-headers
+archzfs-dkms-git
