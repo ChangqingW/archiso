@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# pacman.conf manipulations
+pacman_conf () {
+    sed -i 's/#ParallelDownloads.*/ParallelDownloads = 15/' /etc/pacman.conf
+    sed -i 's/#Color/Color/' /etc/pacman.conf
+    echo "pacman.conf manipulations done!"
+}
+
+# paru.conf manipulations
+paru_conf () {
+    sed -i 's/#BottomUp/BottomUp/' /etc/paru.conf
+    sed -i 's/#SudoLoop/SudoLoop/' /etc/paru.conf
+    echo "paru.conf manipulations done!"
+}
+
+# Add archzfs repo
+archzfs () {
+cat >>/etc/pacman.conf << EOF
+
+[archzfs]
+Server = https://archzfs.com/\$repo/\$arch
+EOF
+    echo "archzfs repo added!"
+}
+
+pacman_conf
+paru_conf
+archzfs
+# bin_executable

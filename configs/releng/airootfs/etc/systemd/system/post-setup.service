@@ -1,0 +1,9 @@
+[Unit]
+Description=Post setup mechanism
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/post-setup
+
+[Install]
+WantedBy=multi-user.target
