@@ -18,7 +18,7 @@ cleanup () {
 
 # Fetch and patch files
 setup () {
-    git clone git@github.com:ChangqingW/archiso.git --branch custom --depth=1 archiso-base
+    git clone https://github.com/ChangqingW/archiso.git --branch custom --depth=1 archiso-base
 }
 
 # Setup local repo

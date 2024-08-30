@@ -34,7 +34,7 @@ jobs:
 
       - name: Build ArchISO
         run: |
-          pacman -Syyu archiso grub dash paru base-devel --noconfirm
+          pacman -Syyu archiso grub dash base-devel git --noconfirm
           time ./scripts/build.sh
 
       - name: Create release tags
