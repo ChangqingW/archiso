@@ -7,13 +7,6 @@ pacman_conf () {
     echo "pacman.conf manipulations done!"
 }
 
-# paru.conf manipulations
-paru_conf () {
-    sed -i 's/#BottomUp/BottomUp/' /etc/paru.conf
-    sed -i 's/#SudoLoop/SudoLoop/' /etc/paru.conf
-    echo "paru.conf manipulations done!"
-}
-
 # Add archzfs repo
 archzfs () {
 cat >>/etc/pacman.conf << EOF
@@ -25,6 +18,5 @@ EOF
 }
 
 pacman_conf
-paru_conf
 archzfs
 # bin_executable
