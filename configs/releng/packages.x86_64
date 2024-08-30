@@ -130,3 +130,19 @@ xl2tpd
 zsh
 linux-headers
 archzfs-dkms-git
+
+dash
+hyprland
+paru
+
+# fonts
+noto-fonts
+noto-fonts-cjk
+
+# utility
+aria2
+fastfetch
+firefox
+neovim
+p7zip
+kitty
