@@ -40,10 +40,10 @@ jobs:
 
       - name: 2GB Splits
         run: |
-          mkdir GHA_out && split -d -b 1900M archiso-base/out/*.iso GHA_out/archlinux.iso.part
+          mkdir GHA_out && split -d -b 2000M archiso-base/out/*.iso GHA_out/archlinux.iso.part
           md5sum archiso-base/out/*.iso GHA_out/*.part* > GHA_out/md5sums.txt
 
-      - name: Create release tags
+      - name: Create release
         run: |
           echo "filePath=$(find archiso-base/out -type f)" >> $GITHUB_ENV
           echo "fileName=$(find archiso-base/out -type f -exec basename {} \;)" >> $GITHUB_ENV
@@ -51,7 +51,7 @@ jobs:
           echo ${{ env.filetag }}
       
       - name: Release ArchISO
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: GHA_out/*
           tag_name: ${{ env.fileTag }}
