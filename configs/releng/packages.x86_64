@@ -130,8 +130,9 @@ zsh
 linux-headers
 archzfs-dkms-git
 
-dash
 hyprland
+nvidia-open
+polkit
 
 # fonts
 noto-fonts
