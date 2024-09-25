@@ -16,9 +16,10 @@ cleanup () {
     rm -fr "$parent"/archiso-base "$parent"/work "$parent"/out
 }
 
-# Fetch and patch files
+# Fetch repo and copy files
 setup () {
-    git clone https://github.com/ChangqingW/archiso.git --branch custom --depth=1 archiso-base
+    git clone https://github.com/ChangqingW/archiso.git --branch custom --depth=1 "$parent"/archiso-base
+    cp -r "$parent"/files/* "$parent"/archiso-base/configs/releng/airootfs/root/
 }
 
 # Setup local repo
